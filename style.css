@@ -68,3 +68,51 @@ button, input, textarea {
 
 /* ---- Night forest layers ---- */
 
+.forest {
+    position: fixed;
+    z-index: -2;
+    inset: 0 0;
+    height: 38vh;
+    opacity: 0.28;
+    pointer-events: none;
+    background: linear-gradient(150deg, transparent 0 67%, var(--forest) 67.3% 69%, transparent 69.3%) 10% 100% / 230px 280px, linear-gradient(30deg, transparent 0 67%, var(--forest) 67.3% 69%, transparent 69.3%) 74% 100% / 250px 330px, linear-gradient(150deg, transparent 0 67%, var(--forest) 67.3% 69%, transparent 69.3%) 50% 100% / 230px 280px;
+}
+
+.fireflies {
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+    pointer-events: none;
+}
+
+.fireflies span {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--cyan);
+    box-shadow: 0 0 14px var(--cyan);
+    opacity: 0.55;
+    animation: drift 11s infinite ease-in-out, twinkle 3.5s infinite ease-in-out;
+}
+
+.fireflies span:nth-child(1) { left: 8%; top: 22%; animation-delay: 0s, 0s; }
+.fireflies span:nth-child(2) { left: 18%; top: 68%; animation-delay: -2s, -1s; }
+.fireflies span:nth-child(3) { left: 32%; top: 14%; width: 4px; height: 4px; animation-delay: -4s, -0.5s; }
+.fireflies span:nth-child(4) { left: 47%; top: 80%; animation-delay: -1s, -2s; }
+.fireflies span:nth-child(5) { left: 58%; top: 30%; width: 5px; height: 5px; animation-delay: -3s, -1.5s; }
+.fireflies span:nth-child(6) { left: 68%; top: 62%; animation-delay: -5s, -0.8s; }
+.fireflies span:nth-child(7) { left: 78%; top: 18%; width: 4px; height: 4px; animation-delay: -2.5s, -2.2s; }
+.fireflies span:nth-child(8) { left: 88%; top: 48%; animation-delay: -6s, -1.2s; }
+.fireflies span:nth-child(9) { left: 92%; top: 82%; width: 5px; height: 5px; animation-delay: -0.5s, -0.3s; }
+.fireflies span:nth-child(10) { left: 42%; top: 45%; width: 4px; height: 4px; animation-delay: -7s, -1.8s; }
+
+@keyframes drift {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(18px, -28px); }
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.25; }
+    50% { opacity: 0.9; }
+}
