@@ -9,7 +9,7 @@
     --bg-alt: #0a1430;
     --surface: rgba(18, 40, 68, 0.76);
     --surface-2: #122844;
-    --text: #f0ffff;
+    --text: black;
     --muted: #b7d6dc;
     --cyan: #72f5f2;
     --teal: #55dfcc;
@@ -186,4 +186,112 @@ body.light .header {
 .nav-links a.active {
     color: var(--text);
     background: var(--glow);
+}
+
+.menu-toggle {
+    display: none;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    width: 42px;
+    height: 42px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: var(--text);
+    margin: 5px auto;
+    transition: .3s;
+}
+
+.theme-toggle {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+}
+
+
+/* ---- Hero ---- */
+
+.hero {
+    min-height: 100vh;
+    display: grid;
+    align-items: center;
+    padding-top: 130px;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.eyebrow {
+    color: var(--cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.22rem;
+    font-size: 0.76rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-family: "Marcellus", serif;
+    font-weight: 400;
+    font-size: clamp(2.8rem, 7vw, 5.2rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    max-width: 760px;
+}
+
+.hero h1 span,
+.section-heading span,
+.resume-box span,
+.contact-section span {
+    background: linear-gradient(100deg, var(--cyan), var(--teal));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 28px var(--glow);
+}
+
+.hero h1 strong {
+    display: block;
+    font-weight: 400;
+}
+
+.hero-text {
+    color: var(--muted);
+    max-width: 610px;
+    margin: 0 0 28px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 0 24px;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .2s, box-shadow .2s, background .2s;
+}
+
+.btn:hover {
+    
 }
