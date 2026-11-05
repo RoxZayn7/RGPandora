@@ -354,3 +354,27 @@ body.light .primary {
     height: 100%;
     object-fit: cover;
 }
+
+.portrait-glow {
+    position: absolute;
+    width: 60%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: rgba(114, 245, 242, 0.22);
+    filter: blue(75px);
+}
+
+.orbit {
+    position: absolute;
+    right: 8px;
+    bottom: 22px;
+    padding: 9px 13px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--surface-2);
+    color: var(--teal);
+    font-size: 0.8rem;
+    font-weight: 700;
+    box-shadow: var(--shadow);
+}
+
