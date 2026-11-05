@@ -116,3 +116,23 @@ button, input, textarea {
     0%, 100% { opacity: 0.25; }
     50% { opacity: 0.9; }
 }
+
+
+/* ---- Layout ---- */
+
+.container {
+    width: min(1120px, 92%);
+    margin-inline: auto;
+}
+
+.section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.alt {
+    background: linear-gradient(180deg, transparent, rgba(114, 245, 242, 0.05), transparent);
+}
+
+
+/* ---- Header ---- */
