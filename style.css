@@ -136,3 +136,54 @@ button, input, textarea {
 
 
 /* ---- Header ---- */
+
+header {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    width: 100%;
+    background: rgba(5, 13, 27, 0.72);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--line);
+}
+
+body.light .header {
+    background: rgba(238, 245, 241, 0.78);
+}
+
+.navbar {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.brand img {
+    height: 48px;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    margin-left: auto;
+}
+
+.nav-links a {
+    padding: 8px 13px;
+    border-radius: 999px;
+    color: var(--muted);
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--text);
+    background: var(--glow);
+}
