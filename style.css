@@ -552,3 +552,93 @@ body.light .skill-bar {
     background: linear-gradient(90deg, var(--teal), var(--cyan));
     border-radius: inherit;
 }
+
+
+/* --- Projects --- */
+
+.project-card {
+    overflow: hidden;
+    transition: transform .25s, border-color .25s;
+}
+
+.project-preview {
+    height: 150px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+    font-family: "Marcellus", serif;
+    font-weight: 400;
+    font-size: 1.25rem;
+}
+
+.project-preview::before,
+.project-preview::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border: 1px solid rgba(255, 255, 255, 0.022);
+    transform: rotate(45deg);
+}
+
+.project-preview::after {
+    width: 90px;
+    height: 90px;
+}
+
+.restaurant-preview { background: radial-gradient(circle, #123d51, #050d1b 65%); }
+.portfolio-preview { background: radial-gradient(circle, #24105d, #0b0713 65%); }
+.car-preview { background: radial-gradient(circle, #14352b, #071210 65%); }
+.commerce-preview { background: radial-gradient(circle, #122844, #04151a 65%); }
+
+.project-preview span {
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 0 20px var(--cyan);
+}
+
+.project-body {
+    padding: 20px;
+}
+
+.project-number {
+    color: var(--violet);
+    font-size: 0.78rem;
+    font-weight: 800;
+}
+
+.project-body h3 {
+    margin: 5px 0 8px;
+}
+
+.project-body > p:not(.project-number) {
+    color: var(--muted);
+    font-size: 0.88rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 12px 0;
+}
+
+.tags span {
+    padding: 4px 9px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    color: var(--muted);
+    font-size: 0.7rem;
+}
+
+.project-link {
+    color: var(--cyan);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
