@@ -73,3 +73,17 @@ window.addEventListener("Scroll", () => {
 
 
 // Footer year
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+// Contact form
+if (conatctForm) {
+    conatctForm.addEventListener("submit", event => {
+        event.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        if (formMessage) {
+            formMessage.textContent = `Thanks, ${name || "there"}! This form is read to connect to your email service.`;
+        } 
+        conatctForm.requestFullscreen();
+    });
+}
