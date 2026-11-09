@@ -663,3 +663,70 @@ body.light .skill-bar {
     color: var(--muted);
     margin-top: 12px;
 }
+
+
+/* --- Contact --- */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.contact-intro {
+    margin: 25px 0;
+    max-width: 500px;
+    color: var(--muted);
+}
+
+.contact-info {
+    display: grid;
+    gap: 13px;
+}
+
+.contact-info a {
+    color: var(--cyan);
+}
+
+.contact-form {
+    padding: 32px;
+    display: grid;
+    gap: 10px;
+}
+
+.contact-form label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    outline: none;
+    padding: 14px;
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.35);
+    resize: vertical;
+    transition: border .2s, box-shadow .2s;
+}
+
+body.light .contact-form input,
+body.light .contact-form textarea {
+    background: rgba(14, 33, 26, 0.04);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--cyan);
+    box-shadow: 0 0 0 3px var(--glow);
+}
+
+.form-message {
+    color: #5fd68a;
+    font-size: 0.82rem;
+    min-height: 22px;
+}
