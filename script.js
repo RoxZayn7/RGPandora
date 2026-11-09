@@ -7,7 +7,7 @@ const formMessage = document.getElementById("formMessage");
 
 // Mobile menu
 if (menuToggle && navLinks) {
-    menuToggle.addEventListener("click", () = {
+    menuToggle.addEventListener("click", () => {
         const isOpen = navLinks.classList.toggle("open");
         menuToggle.setAttribute("aria-expanded", isOpen);
     });
