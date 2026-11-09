@@ -752,3 +752,18 @@ body.light .contact-form textarea {
     color: var(--muted);
     font-size: 0.8rem;
 }
+
+
+
+/* --- Reveal --- */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.reveal-show {
+    opacity: 1;
+    transform: translateY(0);
+}
