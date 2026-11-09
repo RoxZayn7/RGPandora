@@ -578,7 +578,7 @@ body.light .skill-bar {
     position: absolute;
     width: 180px;
     height: 180px;
-    border: 1px solid rgba(255, 255, 255, 0.022);
+    border: 1px solid rgba(255, 255, 255, 0.22);
     transform: rotate(45deg);
 }
 
@@ -758,7 +758,7 @@ body.light .contact-form textarea {
 /* --- Reveal --- */
 
 .reveal {
-    opacity: 0;
+    opacity: 1;
     transform: translateY(25px);
     transition: opacity .7s ease, transform .7s ease;
 }
@@ -766,4 +766,184 @@ body.light .contact-form textarea {
 .reveal.reveal-show {
     opacity: 1;
     transform: translateY(0);
+}
+
+
+
+/* --- Responsive --- */
+
+@media (max-width: 900px) {
+    .hero-grid,
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-text {
+        margin-bottom: auto;
+    }
+
+    .hero-buttons,
+    .quick-stats {
+        justify-content: center;
+    }
+
+    .hero-portrait {
+        order: -1;
+        max-width: 320px;
+        margin-inline: auto;
+    }
+
+    .skills-grid,
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .resume-box {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 700px) {
+    .navbar {
+        min-height: 68px;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 68px;
+        left: 4%;
+        right: 4%;
+        display: grid;
+        gap: 0;
+        padding: 8px;
+        background: rgba(5, 13, 27, 0.97);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        transform: translateY(-15px);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: .25s ease;
+    }
+
+    body.light .nav-links {
+        background: rgba(255, 255, 255, 0.97);
+    }
+
+    .nav-links.open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 13px 15px;
+    }
+
+    .section {
+        padding: 75px 0;
+    }
+
+    .skills-grid,
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding-top: 105px;
+    }
+
+    .quick-stats {
+        gap: 20px;
+    }
+
+    .resume-box {
+        padding: 30px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 425px) {
+    .container {
+        width: min(92%, 390px);
+    }
+
+    .hero h1 {
+        font-size: 2.55rem;
+    }
+
+    .hero-text {
+        font-size: 0.92rem;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .quick-stats {
+        gap: 14px;
+    }
+
+    .quick-stats strong {
+        font-size: 1.05rem;
+    }
+
+    .quick-stats span {
+        font-size: 0.63rem;
+    }
+
+    .about-card,
+    .contact-form {
+        padding: 23px;
+    }
+
+    pre {
+        padding: 22px;
+        font-size: 0.85rem;
+    }
+
+    .resume-box .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 375px) {
+    .hero h1 {
+        font-size: 2.25rem;
+    }
+
+    .section-heading h2,
+    .resume-box h2,
+    .contact-section h2 {
+        font-size: 2rem;
+    }
+
+    .quick-stats {
+        flex-wrap: wrap;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
 }
