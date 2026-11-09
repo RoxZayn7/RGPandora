@@ -4,6 +4,7 @@ const themeToggle = document.getElementById("themeToggle");
 const conatctForm = document.getElementById("contactForm");
 const formMessage = document.getElementById("formMessage");
 
+
 // Mobile menu
 if (menuToggle && navLinks) {
     menuToggle.addEventListener("click", () = {
@@ -18,6 +19,7 @@ if (menuToggle && navLinks) {
         });
     });
 }
+
 
 // Dark / Light theme
 if (themeToggle) {
@@ -38,8 +40,8 @@ try {
     }
 } catch (e) { /* storage unavailable, keep going */ }
 
-// Scroll reveal
 
+// Scroll reveal
 const revealObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -51,3 +53,23 @@ const revealObserver = new IntersectionObserver(entries => {
 
 document.querySelectorAll(".reveal").forEach(el = revealObserver.observe(el));
 
+
+// Active nav link on scroll
+const sections = document.querySelectorAll("section[id]");
+const navigationLinks = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("Scroll", () => {
+    let currentSection = "";
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 150;
+        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + section.offsetHeight) {
+            currentSection = section.getAttribute("id");
+        }
+    });
+    navigationLinks.forEach(link => {
+        link.classList.toggle("active", link.getAttribute("href") === `${currentSection}`);
+    });
+});
+
+
+// Footer year
