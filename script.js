@@ -58,7 +58,7 @@ document.querySelectorAll(".reveal").forEach(el = revealObserver.observe(el));
 const sections = document.querySelectorAll("section[id]");
 const navigationLinks = document.querySelectorAll(".nav-links a");
 
-window.addEventListener("Scroll", () => {
+window.addEventListener("scroll", () => {
     let currentSection = "";
     sections.forEach(section => {
         const sectionTop = section.offsetTop - 150;
@@ -67,7 +67,7 @@ window.addEventListener("Scroll", () => {
         }
     });
     navigationLinks.forEach(link => {
-        link.classList.toggle("active", link.getAttribute("href") === `${currentSection}`);
+        link.classList.toggle("active", link.getAttribute("href") === `#${currentSection}`);
     });
 });
 
@@ -84,6 +84,6 @@ if (conatctForm) {
         if (formMessage) {
             formMessage.textContent = `Thanks, ${name || "there"}! This form is read to connect to your email service.`;
         } 
-        conatctForm.requestFullscreen();
+        conatctForm.reset();
     });
 }
